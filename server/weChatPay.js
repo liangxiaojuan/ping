@@ -1,7 +1,6 @@
 /**
- * Created by administrator on 15-8-5.
+ *
  */
-//getUserOpenId
 Picker.route('/weixin_openid_url', function (params, req, res, next) {
     var fibers = Meteor.npmRequire('fibers');
     console.log('CODE:' + params.query.code);

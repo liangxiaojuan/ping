@@ -1,0 +1,19 @@
+    <script>
+        function mySendWeChat(){
+            var charge = '{{charge}}';
+            charge = JSON.parse(decodeURI(charge));
+            pingpp.createPayment(charge, function(result, err) {
+                if (result == "success") {
+                    window.location.href='http://http://182.92.108.54/'+charge.order_no;
+                    // 只有微信公众账号 wx_pub 支付成功的结果会在这里返回，其他的 wap 支付结果都是在 extra 中对应的 URL 跳转。
+                } else if (result == "fail") {
+                    window.location.href='http://http://182.92.108.54/'+charge.order_no;
+                    // charge 不正确或者微信公众账号支付失败时会在此处返回
+                } else if (result == "cancel") {
+                    window.location.href='http://http://182.92.108.54/'+charge.order_no;
+                    // 微信公众账号支付取消支付
+                }
+            });
+        }
+        window.onload = mySendWeChat();
+    </script>

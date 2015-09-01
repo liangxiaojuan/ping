@@ -7,8 +7,9 @@
 meteor-platform
 autopublish
 insecure
-meteorhacks:npm
 jquery
 meteorhacks:picker
 meteorhacks:async
 meteorhacks:ssr
+meteorhacks:npm
+npm-container

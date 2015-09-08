@@ -11,13 +11,14 @@ if (Meteor.isClient) {
             params.out_trade_no = "5a45as";//订单号
             params.body = "测试";//商品描述
             params.total_fee = $("#ping").val();//钱
-            params.openid = vm.openid; //OpenID很重要,在关注者与公众号产生消息交互后，
+            params.openid = '啊啊' //OpenID很重要,在关注者与公众号产生消息交互后，
             // 公众号可获得关注者的OpenID（加密后的微信号，
             // 每个用户对每个公众号的OpenID是唯一的。对于不同公众号，同一用户的openid不同）
             //微信开发文档有.
             console.log('->提交到服务器', params);
-            meteor.call('weChatPay', params).then(
-                function (data) {
+
+                Meteor.call('weChatPay',params,function(data){
+
                     //最终结果 ping++会返回 一个Charge 对象,data就是Charge对象,Charge 对象是支付凭据,
 
                     if (data) {

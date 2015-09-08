@@ -6,7 +6,6 @@ Meteor.ping = {
 
     //ping++ 微信支付
     'wxPingppPay_createCharge': function (order, callback) {
-
         var pingpp = new Pingpp(order);
         pingpp._createCharge(function (err, charge) {
             if (err) {
@@ -17,10 +16,10 @@ Meteor.ping = {
         });
     }
 
-};
-//ping++  ---------------------支付---------------------------
 
-var pingpp = Meteor.npmRequire('pingpp')('sk_live_8KSOMvrkEVoT1RnbewiRdM4Z');
+};
+
+var pingpp = Meteor.npmRequire('pingpp')('');
 
 var PingRefund = function () {
 };
@@ -75,4 +74,3 @@ Pingpp.prototype._createCharge = function (callback) {
 
     });
 };
-
